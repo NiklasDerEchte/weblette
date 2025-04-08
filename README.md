@@ -9,7 +9,14 @@ To start the application, use the following code:
 from webapp import WebApp
 
 app = WebApp()
+
+# import custom flask-modules
 app.environment.add_module("mongo", PyMongo)
+
+# create routes
+from routes import api
+app.environment.web.register_blueprint(api, url_prefix='/route')
+
 app.run()
 ```
 
