@@ -9,7 +9,7 @@ from datetime import timedelta
 
 class Environment:
     def __init__(self, **kwargs):
-        self._config_filename = kwargs.get("filename", "env.cnf")
+        self._config_filename = kwargs.get("filename", "config.toml")
         self.default_settings = {
             "setup": {
                 "host": "0.0.0.0",
@@ -107,7 +107,7 @@ class WebApp:
     
     def _demon(self):
         try:
-            host = self.environment.config['setup']['host']
+            host = self.environment.config['setup']['host'].strip("'").strip('"')
             port = int(self.environment.config['setup']['port'])
 
             print("starting weblette debug server...")
