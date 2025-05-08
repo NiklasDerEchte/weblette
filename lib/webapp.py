@@ -114,10 +114,3 @@ class WebApp:
             self.environment.socket.run(self.environment.web, allow_unsafe_werkzeug=True, port=port, host=host, debug=True)
         except Exception as e:
             print("Failed to define param: {}".format(str(e)))
-
-def make_app():
-    app = WebApp()
-    app.run()
-
-if __name__ == "__main__":
-    make_app()
