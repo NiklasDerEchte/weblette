@@ -98,11 +98,15 @@ class WebApp:
         self.environment = Environment(**params)
         WebApp.instance = self
     
-    def run(self):
+    def make_app(self):
         for module_name, module in self.environment.modules.items():
             self.environment.modules[module_name] = module(**self.environment.config._sections[module_name])
             self.environment.modules[module_name].init_app(self.environment.web)
         self.environment._save_config()
+        return self.environment.web
+
+    def run(self):
+        self.make_app()
         self._demon()
     
     def _demon(self):
