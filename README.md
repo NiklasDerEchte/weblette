@@ -1,9 +1,9 @@
 # webapp.py
-`webapp.py` is a Python script for running a basic web application. It is located in the `lib` directory. The entire project follows a basic best-practice structure for a single-page web application.
+`webapp.py` is a Python script for running a basic web application or REST-API. It is located in the `lib` directory. The entire project follows a basic best-practice structure for a single-page web application.
 
 ## Usage of webapp.py
 
-Take a look at `app.py` for usage examples. It also allows loading `Flask` modules:
+Take a look at `main.py` for usage examples. It also allows loading `Flask` modules:
 
 ```python
 from webapp import WebApp
